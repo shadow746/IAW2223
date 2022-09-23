@@ -1,0 +1,73 @@
+.encabezado {
+    text-align: center;
+    font-size: 200%;
+	border: 5px solid rgb(65, 57, 57);
+    background-color: rgb(235, 222, 222);
+}
+
+.principal {
+    overflow: auto;
+    background-color: rgb(98, 204, 231);
+
+}
+
+.menu-izquierdo {
+    float: left;
+}
+
+.cuadro-izquierdo {
+    border: 5px solid rgb(234, 234, 245);
+    height: 100px;
+}
+
+.menu-derecho {
+    float: right;
+}
+
+.cuadro-derecho {
+    border: 5px solid rgb(234, 234, 245);
+    height: 150px;
+}
+
+.articulos {
+    border: 5px solid rgb(234, 234, 245);
+    overflow: auto;
+}
+
+.articulo {
+    overflow: auto;
+
+}
+.articulo:hover{
+    overflow: auto;
+    position: relative;
+    top:3px;
+    left:5px;
+    background-color: lightgrey;
+    
+}
+
+.float {
+    border: 5px solid rgb(20, 163, 139);
+    float: left;
+}
+
+
+
+.pie {
+    text-align: center;
+	border: 5px solid black;
+}
+
+img {
+    width: 150px;
+}
+
+body {
+    font-family: sans-serif;
+	line-height: 1.5;
+}
+
+* {
+	margin: 5px;
+}
