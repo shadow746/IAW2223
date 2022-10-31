@@ -1,0 +1,22 @@
+
+.circulos{display: flex;}
+
+.circulo1 {width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 100%;
+    margin: 10px;}
+
+.circulo2 {width: 100px;
+    height: 100px;
+    background-color: green;
+    border-radius: 100%;
+    margin: 10px;}
+
+.circulo3 {width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 100%;
+    margin: 10px;}
+
+    p{margin-left: 30px;}
