@@ -1,5 +1,5 @@
 function ocultar1() {
-document.getElementById('cir1').style.display = 'none';
+document.getElementById('cir1').style.visibility = 'hidden';
 
 }
 
