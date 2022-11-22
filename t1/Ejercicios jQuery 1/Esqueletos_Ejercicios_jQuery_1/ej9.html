@@ -17,6 +17,8 @@
         }
     </style>
     <!-- Incluye aquí jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
 <body>
     <h1>Las funciones each y append en jQuery</h1>
@@ -30,6 +32,24 @@
     </ul>
 
     <script>
+        $(function() {
+
+$("#li a").each(function(){
+    $(this).append('<img src=""')
+    alert($("img").attr("src"));
+})
+$("#btn-encabezado").click(function(e){
+    e.preventDefault();
+    alert($("h1").text());
+})
+$("#btn-parrafo").click(function(e){
+    e.preventDefault();
+    alert($("p").html());
+})
+}
+
+
+)
         /* Rellena aquí el código jQuery */
      </script>
 </body>
