@@ -6,19 +6,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ejercicio formulario</title>
     <script src="formulario.js"></script>
    
     
 </head>
 <body>
-    <form name="formulario1">
+    
+    <form name="formulario1" action="">
+        <!-- <form action="">
+--> 
         <div>
-            <label>Nombre: </label><input class="form" type="text" id="dato0" required placeholder="Nombre">
+            <label>Nombre: </label><input class="form" type="text" id="dato0" required placeholder="Escribe tu nombre">
             <label id="error0"></label><br><br>
 
-            <label>Apellidos: </label><input class="form" type="text" id="dato1" required placeholder="Apellidos">
+            <label>Apellido1: </label><input class="form" type="text" id="dato1" required placeholder="Apellido">
             <label id="error1"></label><br><br>
+            <label>Apellido2: </label><input class="form" type="text" id="dato9" required placeholder="Apellido 2">
+            <label id="error9"></label><br><br>
 
             <label>Correo electrónico: </label><input class="form" type="email" id="dato2" required placeholder="Correo electrónico">
             <label id="error2"></label><br><br>
@@ -35,6 +40,13 @@
         
             <label>Repetir Contraseña: </label><input class="form" type="password" id="dato8" required placeholder="Repetir contraseña">
             <label id="error8"></label><br><br>
+            <label>fecha de nacimiento: </label>
+            <input type='date'> </input><br><br>
+            <label for="">descripcion </label>
+            <textarea></textarea><br><br>
+            <input type="checkbox"> acepto los terminos</input> <br><br>
+
+
         </div>
     <button onclick="ValidarFormulario()">Validar</button>
     </form>

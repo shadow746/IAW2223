@@ -78,12 +78,15 @@ function VerificarPassword (pass1,pass2,i)
             document.getElementById(item2).innerHTML = "las contraseñas son de mínimo 8 caracteres";
             correcto=0;
 
-        }else if(!pass1.match(valores) || !pass2.match(valores))
+        }
+        /*
+       else if(!pass1.match(valores) || !pass2.match(valores))
         {
             document.getElementById(item1).innerHTML = "solo números y letras";
             document.getElementById(item2).innerHTML = "solo números y letras";
             correcto=0;
         }
+        */ 
         return (correcto);
 }
 
