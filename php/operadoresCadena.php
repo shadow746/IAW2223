@@ -9,7 +9,7 @@
 <body>
 
 <?php  
-$cadena = " esto es una variable de  cadena";  
+$cadena = "tipo esto es una variable de  cadena";  
 
 
 echo "<p> cadena original es:" . $cadena . "</p>";
@@ -18,8 +18,9 @@ echo "<p> numero de palabras dentro: " . str_word_count($cadena) . "</p>";
 echo "<p> la inversa es: "  . strrev($cadena) . "</p>";
 //echo "<p> x % y=" . $x % $y . "</p>";
 $estatipo= strpos($cadena, "tipo");
+// es necesario por !== para decir que no sea algo, mira php operators que lo explica
 echo "$estatipo";
-if  ($estatipo=true){
+if  ($estatipo!==false){
     echo "<p> si esta la palabra tipo</p>";
 
 }
