@@ -1,8 +1,12 @@
 <?php
+
+    /*
+    
     session_start();
-    $error="";
+
     if (array_key_exists("Logout",$_GET))
     {
+        
         //Viene de la página index
         session_unset();
         setcookie("id","",time()-60*60);
@@ -10,24 +14,25 @@
     }
     else if ((array_key_exists("id",$_SESSION) AND $_SESSION['id']) OR (array_key_exists("id",$_COOKIE) AND $_COOKIE['id']))
     {
-        header ("Location: index.php");
+        header ("Location: sesion2.php");
     }
-
+*/
     if (array_key_exists("submit",$_POST))
     {
-        include("db.php");
+        $host = "sdb-53.hosting.stackcp.net";   
+$user = "cristina";   
+$pass = "Admin123";   
+$database = "bdpruebas-35303035a708";     
+$conn = mysqli_connect($host,$user,$pass,$database);
         if (!$_POST['username'])
         {
-            $error .= "<br>username requerido.";
+            echo "<br>username requerido.";
         }
         if (!$_POST['password'])
         {
-            $error .= "<br>Contraseña requerida.";
+            echo "<br>Contraseña requerida.";
         }
-        if ($error!="")
-        {
-            $error="<p>Hubo algun(os) error(es) en el formulario:".$error."</p>";
-        }
+        
         else
         {
             if ($_POST['registro']=='1')
@@ -52,17 +57,24 @@
                         $query="UPDATE usuarios SET password='".md5(md5(mysqli_insert_id($conn)).$_POST['password'])."' WHERE id=".mysqli_insert_id($conn)." LIMIT 1";
                         mysqli_query($conn,$query);
                         $_SESSION['id']=mysqli_insert_id($conn);
-                        if ($_POST['permanecerIniciada']=='1')
+                      /*  if ($_POST['permanecerIniciada']=='1')
                         {
                             setcookie("id",mysqli_insert_id($conn),time()+60*60*24*365);
-                        }
-                        echo "<script>window.location='includes/home.php';</script>";
+                             echo "<script>window.location='index.php';</script>";
+
+                        }*/
                     }
                 }
             }
             else
             {
                 // Comprobamos el inicio de sesión
+               
+               $host = "sdb-53.hosting.stackcp.net";   
+$user = "cristina";   
+$pass = "Admin123";   
+$database = "bdpruebas-35303035a708";     
+$conn = mysqli_connect($host,$user,$pass,$database);
                 $query="SELECT * FROM usuarios WHERE username='".mysqli_real_escape_string($conn,$_POST['username'])."'";
                 $result=mysqli_query($conn,$query);
                 $fila=mysqli_fetch_array($result);
@@ -98,14 +110,15 @@
       <div class="container">
         <h1>incidencias</h1>
         <p><strong>Informa tus incidencias</strong></p>
-        <div id="error">
+       <!-- <div id="error">
             <?php 
             if ($error!="")
                     {
                         echo "<div class=\"alert alert-danger\" role=\"alert\">".$error."</div>";
                     }
             ?>
-        </div>
+        </div> 
+        -->
         <form method="POST" id="formularioRegistro">
             <p>¿Interad@? Regístrate ahora!</p>
             <fieldset class="form-group">

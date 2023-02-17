@@ -1,4 +1,5 @@
-<?php  include '../header.php'?>
+<?php include "../header3.php"?>
+<?php include "../db.php"?>
 
 <h1 class="text-center">Detalles de incidencia</h1>
   <div class="container">

@@ -1,7 +1,8 @@
 <!-- Header -->
-<?php include "../header.php"?>
+<?php include "../header3.php"?>
+<?php include "../db.php"?>
 
-  <div class="container">
+<div class="container">
     <h1 class="text-center" >Gestión de incidencias (CRUD)</h1>
       <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
@@ -9,6 +10,8 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
+
+
       <a href="create.php" class='btn btn-outline-dark mb-2'> <i class="bi bi-person-plus"></i> Añadir incidencia</a>
         <table class="table table-striped table-bordered table-hover">
           <thead class="table-dark">
@@ -27,12 +30,36 @@
             <tbody>
               <tr>
 
-          <?php
-         
+
+          <?php 
+
+    if (!$conn) {
+        echo "Conexión fallida: " . mysqli_connect_error();
+    }
+    else {
            // $query="SELECT * FROM incidencia";    
             $query = "SELECT incidencia.id, planta.nombrep, aula.nombrea, descripcion, fecha_alta, fecha_rev, fecha_sol, comentario FROM `incidencia` , `planta`, `aula` WHERE planta.id=incidencia.planta and aula.id=incidencia.aula;";
             
             $vista_incidencias= mysqli_query($conn,$query);
+            
+             $query2="SELECT * FROM incidencia";       
+           $query3="SELECT * FROM incidencia WHERE fecha_sol > 0";
+          $query4="SELECT * FROM incidencia WHERE fecha_sol = ''";
+
+                        $resulta = mysqli_query($conn,$query2);
+                        $numero = mysqli_num_rows($resulta);
+                        $resulta2 = mysqli_query($conn,$query3);
+                        $numero2 = mysqli_num_rows($resulta2);
+                          $resulta3 = mysqli_query($conn,$query4);
+                        $numero3 = mysqli_num_rows($resulta3);
+                        
+                             
+                      
+              
+                        echo ' Número de total de incidencias: ' . $numero;
+                        echo ' solucionadas: ' . $numero2;
+                        echo ' pendientes: ' . $numero3;
+
 
             while($row= mysqli_fetch_assoc($vista_incidencias)){
               $id = $row['id'];                
@@ -58,16 +85,13 @@
               echo " </tr> ";
       
                   } 
-                 
+                  
+                  
+                  
+              mysqli_close($conn);    
+    }
 
-
-                ?>
-                 <?php
-            $query2="SELECT * FROM incidencia";       
-                        $resulta = mysqli_query($conn,$query2);
-                        $numero = mysqli_num_rows($resulta);
-                        echo 'Número de total de incidencias: ' . $numero;
-                ?>
+                ?>  
               </tr>  
             </tbody>
         </table>

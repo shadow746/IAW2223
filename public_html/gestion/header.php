@@ -1,16 +1,21 @@
-<?php include "db.php" ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<!-- Bootstrap Icon -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Gestión de incidencias (CRUD)</title>
+<?php
+session_start();
+    if (array_key_exists("id",$_COOKIE)) {
+        $_SESSION['id'] = $_COOKIE['id'];
+    }
+
+    if (array_key_exists("id",$_SESSION)) {
+$host = "sdb-53.hosting.stackcp.net";   
+$user = "cristina";   
+$pass = "Admin123";   
+$database = "bdpruebas-35303035a708";
     
-</head>
-<body>
+$conn = mysqli_connect($host, $user, $pass, $database);   
     
+   if (!$conn) {                                             
+        echo "Conexión fallida: " . mysqli_connect_error();
+  }
+} else {
+    echo "<script>window.location.href = 'https://iawcristina-com.stackstaging.com/gestion/sesion2.php';</script>";
+}
+?>

@@ -1,5 +1,6 @@
 <!-- Footer -->
-<?php include "../header.php"?>
+<?php include "../header3.php"?>
+<?php include "../db.php"?>
 
 <?php
    if(isset($_GET['incidencia_id']))
