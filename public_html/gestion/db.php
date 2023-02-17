@@ -8,7 +8,7 @@
     if (array_key_exists("id",$_SESSION)) {
 $host = "sdb-53.hosting.stackcp.net";   
 $database = "bdpruebas-35303035a708";     
-$conn = mysqli_connect($host,$user,$pass,$database);   
+$conn = mysqli_connect($host,$database);   
 if (!$conn) {                                             
     die("Conexión fallida con base de datos: " . mysqli_connect_error());     
   }
